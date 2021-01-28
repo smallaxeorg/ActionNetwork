@@ -1,0 +1,44 @@
+/*Colors & Font Stacks to change per brand*/
+//Color sets
+$accent: #E60A50; //buttons 
+$secondary-accent: #0E0F1A; //
+$white: #f9f9f9;
+
+//Turned up in style
+$main-text: #242424;
+$heading: $main-text; //heading
+$small-text: #888888;
+$footer-text: $white;
+$error-text: $main-text;
+$links: $secondary-accent;
+
+
+$header: $accent; //header background
+$footer: $secondary-accent; //footer background
+$status-bar: $accent;
+$error: red;
+
+$logo-width: 150px;
+
+/*Fonts*/ // If you are using a google font, use this to link it:
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+// If you need to upload the fonts, this is how you do it:
+
+@font-face {
+  font-family: 'font-name';
+    src: url('font-name.eot') format('embedded-opentype'); /* IE9 Compat Modes */
+    src: url('font-name.eot') format('embedded-opentype'), /* IE6-IE8 */ url('font-name.woff2') format('woff2'), /* Super Modern Browsers */
+    url('font-name.woff') format('woff'), /* Pretty Modern Browsers */
+    url('font-name.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+$heading-font: sans-serif;
+$body-font: sans-serif;
+
+
+
+//import foundation
+@import 'foundation/style'; 
