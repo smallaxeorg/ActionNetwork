@@ -1,5 +1,5 @@
 /* Base styles */
-can_embed-html* {
+html.can_embed-html, * {
   font-family: $body-font;
   box-sizing: border-box;
 }
