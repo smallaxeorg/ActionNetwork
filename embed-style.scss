@@ -1,0 +1,30 @@
+/*Colors & Font Stacks to change per brand*/
+//Color sets
+$accent: #ff4b3e; //buttons 
+$secondary-accent: #0E0F1A; //
+$white: #f9f9f9; 
+
+//Turned up in style
+$main-text: #242424;
+$heading: $main-text; //heading
+$small-text: #888888;
+$footer-text: $white;
+$error-text: $main-text;
+$links: $secondary-accent;
+
+
+$header: $accent; //header background
+$footer: $secondary-accent; //footer background
+$status-bar: $accent;
+$error: red;
+
+$logo-width: 150px;
+
+/*Fonts*/ // If you are using a google font, use this to link it:
+
+
+$heading-font: forma-djr-deck, sans-serif;
+$body-font: neue-haas-unica, sans-serif;
+
+//import foundation
+@import 'foundation/embed'; 
