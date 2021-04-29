@@ -1,10 +1,10 @@
 /* Base styles */
-html.can_embed-html, * {
+ * {
   font-family: $body-font;
   box-sizing: border-box;
 }
 
-body.gen_body {
+html.can_embed-html body.gen_body {
   color: $main-text;
   margin: 0;
   font-family: $body-font;
