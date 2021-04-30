@@ -1,263 +1,94 @@
 /*Colors & Font Stacks to change per brand*/
 /*Fonts*/
 /* Base styles */
-/* line 2, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-* {
-  font-family: neue-haas-unica, sans-serif;
-  box-sizing: border-box; }
-
-/* line 7, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-html.can_embed-html body.gen_body {
-  color: #242424;
+/* line 3, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+html.can_embed-html body#can_fundraising_widget {
+  color: #02042f;
   margin: 0;
   font-family: neue-haas-unica, sans-serif; }
-
-/* line 13, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-input[type=submit], .button {
-  -webkit-appearance: none; }
-
-/* line 17, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-table {
-  width: 100%; }
-  /* line 20, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  table tr:first-child {
-    font-weight: 800; }
-  /* line 23, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  table tr:nth-child(odd) {
-    background: #f9f9f9; }
-  /* line 26, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  table tr td {
-    padding: 10px; }
-
-/* Gen Wrapper is the insider wrapper for header/body/footer */
-/* line 34, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-.gen_wrapper {
-  padding: 40px 20px;
-  width: 1160px;
-  max-width: 100%;
-  margin: auto;
-  box-sizing: border-box; }
-  /* line 40, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .gen_wrapper img {
-    margin: auto;
-    display: block; }
-
-/* Header section */
-/* line 47, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-#gen_header {
-  padding: 0;
-  background-color: #ff4b3e;
-  /* [THIS IS GENERATED FROM THE *FIRST* COLOR PICKER OPTION] */
-  text-align: center; }
-  /* line 51, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  #gen_header .logo {
+  /* line 10, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+  html.can_embed-html body#can_fundraising_widget #can_embed_form h2.line, html.can_embed-html body#can_fundraising_widget #can_embed_form #donation_recipient_wrap, html.can_embed-html body#can_fundraising_widget #can_embed_form #action_info {
+    display: none; }
+  /* line 13, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+  html.can_embed-html body#can_fundraising_widget #can_embed_form #form_col1, html.can_embed-html body#can_fundraising_widget #can_embed_form #form_col2 {
+    float: none;
     width: 100%;
-    max-width: 150px; }
-  /* line 55, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  #gen_header .gen_name {
-    margin: 0; }
-
-/* Main Wrapper */
-/* line 62, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-.gen_wrapper #can_embed_form {
-  margin-bottom: 100px;
-  /*totaliser*/
-  /*END totaliser*/
-  /*END Form*/
-  /*Thankyou*/
-  /*END Thankyou*/ }
-  /* line 65, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .gen_wrapper #can_embed_form a {
-    color: #0E0F1A;
-    /* [THIS IS GENERATED FROM THE *SECOND* COLOR PICKER OPTION] */ }
-    /* line 67, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-    .gen_wrapper #can_embed_form a:hover {
-      color: #ff4b3e;
-      /* [THIS IS GENERATED FROM THE *SECOND* COLOR PICKER OPTION] */
-      opacity: .7;
-      text-decoration: none; }
-  /* line 73, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .gen_wrapper #can_embed_form h2.entry-title {
-    font-family: forma-djr-deck, sans-serif; }
-  /* line 76, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .gen_wrapper #can_embed_form action_target {
-    font-weight: normal; }
-  /* line 79, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .gen_wrapper #can_embed_form .action_letter:before {
-    background-color: #ff4b3e; }
-  /* line 87, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .gen_wrapper #can_embed_form .action_status_tracker .action_status_status_bar {
-    height: 11px; }
-    /* line 91, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-    .gen_wrapper #can_embed_form .action_status_tracker .action_status_status_bar > span span.action_status_status_bar-grow {
-      background-color: #ff4b3e;
-      height: 11px; }
-      /* line 94, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-      .gen_wrapper #can_embed_form .action_status_tracker .action_status_status_bar > span span.action_status_status_bar-grow .grow-dot {
-        background-color: #ff4b3e;
-        height: 20px;
-        width: 20px; }
-  /* line 108, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .gen_wrapper #can_embed_form form input[type="submit"],
-  .gen_wrapper #can_embed_form form .button {
-    background-color: #ff4b3e;
-    /* [THIS IS GENERATED FROM THE *SECOND* COLOR PICKER OPTION] */
-    font-weight: bold; }
-    /* line 113, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-    .gen_wrapper #can_embed_form form input[type="submit"]:hover,
-    .gen_wrapper #can_embed_form form .button:hover {
-      opacity: .7; }
-  /* line 117, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .gen_wrapper #can_embed_form form .check_radio_field.donate_amount_wrap label {
-    width: 30%; }
-    /* line 119, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-    .gen_wrapper #can_embed_form form .check_radio_field.donate_amount_wrap label.donate_amount-selected {
-      background-color: #ff4b3e; }
-  /* line 124, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .gen_wrapper #can_embed_form form .custom_fields p {
-    font-size: 14px;
-    line-height: 1.2em; }
-  /* line 131, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .gen_wrapper #can_embed_form form #error_message {
-    background-color: red;
-    color: #242424; }
-  /* line 136, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .gen_wrapper #can_embed_form form .error_input {
-    border-color: red; }
-  /* line 139, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .gen_wrapper #can_embed_form form .error_checkbox {
-    color: #242424; }
-  /* line 149, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .gen_wrapper #can_embed_form #can_thank_you {
-    background-color: #f9f9f9;
-    color: #242424;
-    box-shadow: none; }
-    /* line 154, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-    .gen_wrapper #can_embed_form #can_thank_you #action_info {
-      border: 0; }
-      /* line 156, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-      .gen_wrapper #can_embed_form #can_thank_you #action_info .action_info_user {
-        color: #ff4b3e; }
-        /* line 158, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-        .gen_wrapper #can_embed_form #can_thank_you #action_info .action_info_user a, .gen_wrapper #can_embed_form #can_thank_you #action_info .action_info_user a:hover, .gen_wrapper #can_embed_form #can_thank_you #action_info .action_info_user h1 {
-          color: #ff4b3e; }
-
-/*END Main wrapper*/
-/*Footer*/
-/* line 169, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-footer {
-  font-size: 0.8em;
-  text-align: center;
-  background-color: #0E0F1A;
-  color: #f9f9f9; }
-  /* line 174, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  footer .gen_wrapper {
-    width: 650px; }
-  /* line 177, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  footer a {
+    clear: both; }
+  /* line 18, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+  html.can_embed-html body#can_fundraising_widget #can_embed_form .check_radio_field.donate_amount_wrap label {
+    width: 30%;
+    font-size: 1.5em;
+    height: auto;
+    margin: 0 2.5% 20px 0;
+    padding: 0.25em 0.5em;
+    border: 1px #ff4b3e solid;
+    /*Mobile*/ }
+    /* line 25, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+    html.can_embed-html body#can_fundraising_widget #can_embed_form .check_radio_field.donate_amount_wrap label:hover, html.can_embed-html body#can_fundraising_widget #can_embed_form .check_radio_field.donate_amount_wrap label.donate_amount-selected {
+      background: #f6f930;
+      color: #000114;
+      border-color: #000114; }
+    @media (max-width: 1200px) {
+      /* line 32, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+      html.can_embed-html body#can_fundraising_widget #can_embed_form .check_radio_field.donate_amount_wrap label {
+        width: 100%;
+        margin-right: 0; } }
+  /* line 38, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+  html.can_embed-html body#can_fundraising_widget #can_embed_form .donate_recurring {
+    background: transparent; }
+  /* line 41, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+  html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_login, html.can_embed-html body#can_fundraising_widget #can_embed_form #donation_welcome {
+    background: #000114;
     color: #f9f9f9;
-    font-weight: bold; }
-
-/*Sticky Button*/
-/* line 184, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-#sticky-button {
-  position: fixed;
-  bottom: 0;
-  z-index: 1000;
-  left: 0;
-  background: #0E0F1A;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  padding: 14px;
-  width: 100%;
-  display: none;
-  text-align: center; }
-
-/* line 200, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-#modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: black;
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */ }
-  /* line 211, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  #modal #opt-in-sure {
-    background-color: #f9f9f9;
-    margin: 15% auto;
-    /* 15% from the top and centered */
-    padding: 30px;
-    border: 4px solid #0E0F1A;
-    width: 80%;
-    /* Could be more or less, depending on screen size */
-    margin-bottom: auto; }
-    /* line 218, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-    #modal #opt-in-sure h2 {
-      color: #ff4b3e;
-      margin: 0;
-      font-family: forma-djr-deck, sans-serif; }
-    /* line 223, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-    #modal #opt-in-sure button.subscribe {
+    font-size: 0.9em;
+    margin-top: auto; }
+    /* line 46, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+    html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_login a, html.can_embed-html body#can_fundraising_widget #can_embed_form #donation_welcome a {
+      color: #f6f930; }
+  /* line 48, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+  html.can_embed-html body#can_fundraising_widget #can_embed_form .floatlabel-wrapper .floatlabel-label {
+    color: #02042f; }
+  /* line 51, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+  html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=text], html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=password], html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=url], html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=email], html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=tel], html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=number], html.can_embed-html body#can_fundraising_widget #can_embed_form span.can_select {
+    color: #02042f;
+    border-color: #000114; }
+    /* line 54, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+    html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=text]::placeholder, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=password]::placeholder, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=url]::placeholder, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=email]::placeholder, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=tel]::placeholder, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=number]::placeholder, html.can_embed-html body#can_fundraising_widget #can_embed_form span.can_select::placeholder {
+      color: #02042f; }
+    /* line 57, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+    html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=text]:focus, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=password]:focus, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=url]:focus, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=email]:focus, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=tel]:focus, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=number]:focus, html.can_embed-html body#can_fundraising_widget #can_embed_form span.can_select:focus {
+      border-color: #ff4b3e; }
+  /* line 61, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+  html.can_embed-html body#can_fundraising_widget #can_embed_form .donate_cc_exp {
+    width: 48.75%; }
+    /* line 63, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+    html.can_embed-html body#can_fundraising_widget #can_embed_form .donate_cc_exp.donate_cc_month {
+      margin-right: 2.5%; }
+  /* line 67, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+  html.can_embed-html body#can_fundraising_widget #can_embed_form .can_button, html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_auto_modal input[type=submit], html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_auto_modal .button, html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_make_recurring_modal input[type=submit], html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_make_recurring_modal .button, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=submit], html.can_embed-html body#can_fundraising_widget #can_embed_form .button {
+    border: 3px #ff4b3e solid;
+    font-size: 1.5em;
+    background: #f9f9f9;
+    color: #ff4b3e;
+    font-weight: bold;
+    padding: 0.5em;
+    -webkit-appearance: none; }
+    /* line 75, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+    html.can_embed-html body#can_fundraising_widget #can_embed_form .can_button:hover, html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_auto_modal input[type=submit]:hover, html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_auto_modal .button:hover, html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_make_recurring_modal input[type=submit]:hover, html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_make_recurring_modal .button:hover, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=submit]:hover, html.can_embed-html body#can_fundraising_widget #can_embed_form .button:hover {
       background: #ff4b3e;
       color: #f9f9f9;
-      font-size: 1.2em;
-      padding: 0.75em 1.4em;
-      border: 0; }
-    /* line 230, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-    #modal #opt-in-sure hr {
-      margin-top: 1.5em; }
-    /* line 234, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-    #modal #opt-in-sure .close {
-      font-size: 0.95em;
-      margin-top: 1.5em; }
-    /* line 238, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-    #modal #opt-in-sure .close-button {
-      color: #242424;
-      padding: 0.75em 1.5em;
-      font-size: 1em; }
-
-/*Mobile*/
-@media (max-width: 1200px) {
-  /* line 249, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .footer-info p {
-    width: 70%; } }
-
-@media (max-width: 787px) {
-  /* line 256, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .footer-logo {
-    display: block; }
-  /* line 260, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .footer-info {
-    text-align: center; }
-  /* line 264, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  .footer-info p {
-    width: 100%; }
-  /* line 268, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-  #sticky-button {
-    display: block; } }
-
-/*Fundraising*/
-/* line 277, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-body #can_embed_form.can_768 #can_main_col {
-  width: 50%;
-  float: left; }
-
-/* line 281, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
-body #can_embed_form.can_768 #can_sidebar {
-  width: 45%;
-  float: right; }
+      border-color: #f9f9f9; }
+  /* line 81, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+  html.can_embed-html body#can_fundraising_widget #can_embed_form #d_sharing, html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_disclaimer {
+    border: none; }
+  /* line 82, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+  html.can_embed-html body#can_fundraising_widget #can_embed_form #can_thank_you {
+    background: #000114; }
+    /* line 84, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+    html.can_embed-html body#can_fundraising_widget #can_embed_form #can_thank_you h3.entry-title {
+      border-color: #f6f930; }
+    /* line 87, /Users/janamills/Documents/GitHub/ActionNetwork/foundation/_embed.scss */
+    html.can_embed-html body#can_fundraising_widget #can_embed_form #can_thank_you h4::after {
+      display: none; }
 
 /*# sourceMappingURL=embed-style.css.map */
