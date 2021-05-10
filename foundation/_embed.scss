@@ -1,19 +1,21 @@
 /* Base styles */
 
-html.can_embed-html body#can_fundraising_widget {
+html.can_embed-html body#can_fundraising_widget, .action-network-form-section {
   color: $main-text;
   margin: 0;
   font-family: $body-font;
     
     #can_embed_form {
         //hide
-        h2.line, #donation_recipient_wrap, #action_info {
+        h2, h4, h2.line, #donation_recipient_wrap, #action_info {
             display: none;
         }
-        #form_col1, #form_col2 {
+        &.can_float {
+            #form_col1, #form_col2 {
             float: none;
             width: 100%;
             clear: both;
+            }
         }
         .check_radio_field.donate_amount_wrap label {
             width: 30%;
