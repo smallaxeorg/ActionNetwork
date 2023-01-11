@@ -1,210 +1,194 @@
 <script type="text/javascript">
-    $(document).ready(function() {
 
 
-    $(document).on('can_embed_loaded', function() {
+    $(document).ready(function () {
+      $(document).on("can_embed_submitted", function () {
+        initStickyBtn(false);
+      });
 
+      $(document).on("can_embed_loaded", function () {
+        var formTarget = $("#can_sidebar form");
 
-      var formTarget = $('#can_sidebar form');
-
-      if($('iframe').length) {
-        var iframeID = $('iframe').parent().attr('id');
-        if(iframeID.indexOf('fundraising') > -1) {
-
-          setTimeout(function() {
-            formTarget = $('#can_embed_iframe').contents().find('#can_main_col form');
-            console.log(formTarget);
-          }, 500);
-          $('footer').css('width', '100%');
-          if($(window).width() < 991) {
-            var theTitle = $('h2.entry-title').remove();
-            $('#can_embed_iframe').contents().find('body').append(theTitle);
+        if ($("iframe").length) {
+          var iframeID = $("iframe").parent().attr("id");
+          if (iframeID.indexOf("fundraising") > -1) {
+            setTimeout(function () {
+              formTarget = $("#can_embed_iframe")
+                .contents()
+                .find("#can_main_col form");
+              console.log(formTarget);
+            }, 1000);
+            $("footer").css("width", "100%");
+            if ($(window).width() < 991) {
+              var theTitle = $("h2.entry-title").remove();
+              $("#can_embed_iframe").contents().find("body").append(theTitle);
+            }
           }
         }
+
+        setTimeout(function () {
+          initStickyBtn(true);
+          initOptOutModal();
+        }, 1500);
+      });
+    });
+
+    function initStickyBtn(enabled) {
+      var submit = $("input[type=submit]");
+      var stickyBtn = $("#sticky-button");
+      var form = $("form");
+
+      if (!enabled) {
+        stickyBtn.remove();
+        stickyBtn = null;
+        return;
       }
 
-      $('#sticky-button').click(function() {
-        $('html, body').animate({scrollTop:formTarget.offset().top - 100 }, 'slow');
+      if (!form.length && $("#can_embed_iframe")) {
+        form = $("#can_embed_iframe").contents().find("form");
+        submit = $("#can_embed_iframe").contents().find("input[type=submit]");
+      }
+
+      if (!stickyBtn || !submit.length) return;
+      if (submit.isInViewport()) {
+        stickyBtn.fadeOut();
+      } else {
+        stickyBtn.fadeIn();
+      }
+
+      $("#sticky-button").click(function (e) {
+        e.preventDefault();
+
+        window.scrollTo({
+          top: $(form).offset().top + 50,
+          behavior: "smooth",
+        });
       });
 
-
-
-
-      $('input[name="subscription[group]"]').change(function() {
-        if($(this).val() == 'invalid'){
-          popup_scripts($('#modal'));
+      window.addEventListener("scroll", () => {
+        if (!stickyBtn || !submit.length) return;
+        if (submit.isInViewport()) {
+          stickyBtn.fadeOut();
+        } else {
+          stickyBtn.fadeIn();
         }
-        $(this).data('shown', true);
       });
+    }
 
-      $('#modal button.subscribe').click(function() {
-        $('input[name="subscription[group]"]:first').prop("checked", true);
-        $('#modal .close-button').click();
-      });
+    $.fn.isInViewport = function () {
+      const elementTop = $(this).offset().top;
+      const elementBottom = elementTop + $(this).outerHeight();
+      const viewportTop = $(window).scrollTop();
+      const viewportBottom = viewportTop + $(window).height();
+      return elementBottom > viewportTop && elementBottom < viewportBottom;
+    };
 
-      $(document).on('keydown', function(event) {
-        if (event.key == "Escape") {
-          $('#modal .close-button').click();
-        }
-      });
-
-    });
-
-    $('#modal .close-button').on('click', function() {
-
-      $('#modal').hide();
-      $('body').removeClass('lock');
-      $('[role=navigation]').attr('aria-hidden', 'false');
-      $('.site-header a').attr('tabindex', '0');
-      $('.site-header').css('display', 'block');
-      $('.site-header a').attr('style', 'cursor:pointer;');
-
-
-    });
-
-    function trap_focus(el) {
-      var allElementsThatCanBeFocused = el.find('a[href], area[href], input, select, textarea, button, iframe, object, embed, *[tabindex], *[contenteditable]').not('[tabindex=-1], [disabled], :hidden');
-      allElementsThatCanBeFocused.first().focus();
-
-      var firstFocusableEl = allElementsThatCanBeFocused[0];
-      var lastFocusableEl = allElementsThatCanBeFocused[allElementsThatCanBeFocused.length - 1];
-
-      var KEYCODE_TAB = 9;
-
-      el.on('keydown', function(e) {
-        if (e.key === 'Tab' || e.keyCode === KEYCODE_TAB) {
-          if (e.shiftKey) /* shift + tab */ {
-            if (document.activeElement === firstFocusableEl) {
-              lastFocusableEl.focus();
-              e.preventDefault();
-            }
-          } else /* tab */ {
-            if (document.activeElement === lastFocusableEl) {
-              firstFocusableEl.focus();
-              e.preventDefault();
-            }
+    function initOptOutModal() {
+      $("#can_embed_iframe")
+        .contents()
+        .find('input[name="subscription[group]"]')
+        .change(function () {
+          if ($(this).val() == "invalid") {
+            popup_scripts($("#modal"));
           }
+          $(this).data("shown", true);
+        });
+
+      $('input[name="subscription[group]"]').change(function () {
+        if ($(this).val() == "invalid") {
+          popup_scripts($("#modal"));
         }
+        $(this).data("shown", true);
       });
 
-      $(document).keydown(function(event) {
-        if (event.keyCode == 27) {
-          el.find('.close').click();
+      $("#modal button.subscribe").click(function () {
+        $('input[name="subscription[group]"]:first').prop("checked", true);
+
+        $("#can_embed_iframe")
+          .contents()
+          .find('input[name="subscription[group]"]:first')
+          .prop("checked", true);
+
+        $("#modal .close-button").click();
+      });
+
+      $("#modal .close-button").on("click", function () {
+        $("#modal").hide();
+        $("body").removeClass("lock");
+        $("[role=navigation]").attr("aria-hidden", "false");
+        $(".site-header a").attr("tabindex", "0");
+        $(".site-header").css("display", "block");
+        $(".site-header a").attr("style", "cursor:pointer;");
+      });
+
+      $("body").click(function (event) {
+        if ($(event.target).is("#modal")) {
+          $("#modal .close-button").click();
         }
       });
     }
 
     function popup_scripts(popup) {
-      popup.data('save', $(this));
-      $('.site-header a').attr('tabindex', '-1');
-      $('.site-header').css('display', 'none');
-      $('.site-header a').attr('style', 'cursor:default;');
-      popup.attr('aria-hidden', 'false');
-      popup.css('display', 'flex');
-      $('body').addClass('lock');
-      var allElementsThatCanBeFocused = popup.find('a[href], area[href], input, select, textarea, button, iframe, object, embed, *[tabindex], *[contenteditable]').not('[tabindex=-1], [disabled], :hidden');
-      allElementsThatCanBeFocused.first().focus();
+      popup.data("save", $(this));
+      $(".site-header a").attr("tabindex", "-1");
+      $(".site-header").css("display", "none");
+      $(".site-header a").attr("style", "cursor:default;");
+      popup.attr("aria-hidden", "false");
+      popup.css("display", "flex");
+      $("body").addClass("lock");
+      $(popup).find(".subscribe").focus();
 
-      var firstFocusableEl = allElementsThatCanBeFocused[0];
-      var lastFocusableEl = allElementsThatCanBeFocused[allElementsThatCanBeFocused.length - 1];
+      var frm = frames["can_embed_iframe"];
+      var frmDoc = $(frm?.contentWindow?.document) || $(document);
 
-      var KEYCODE_TAB = 9;
-
-      popup.on('keydown', function(e) {
-        if (e.key === 'Tab' || e.keyCode === KEYCODE_TAB) {
-          if (e.shiftKey) /* shift + tab */ {
-            if (document.activeElement === firstFocusableEl) {
-              lastFocusableEl.focus();
-              e.preventDefault();
-            }
-          } else /* tab */ {
-            if (document.activeElement === lastFocusableEl) {
-              firstFocusableEl.focus();
-              e.preventDefault();
-            }
-          }
-        }
-      });
-
-      $(document).keydown(function(event) {
+      frmDoc.keydown(function (event) {
         if (event.keyCode == 27) {
-          popup.find('.close').click();
+          popup.find(".close").click();
+        } else if (event.key == "Escape") {
+          $("#modal .close-button").click();
         }
       });
     }
 
 
-    function visible(element) {
-      return $.expr.filters.visible(element) && !$(element).parents().addBack().filter(function() {
-        return $.css(this, 'visibility') === 'hidden';
-      }).length;
-    }
 
-    function focusable(element, isTabIndexNotNaN) {
-      var map, mapName, img, nodeName = element.nodeName.toLowerCase();
-      if ('area' === nodeName) {
-        map = element.parentNode;
-        mapName = map.name;
-        if (!element.href || !mapName || map.nodeName.toLowerCase() !== 'map') {
-          return false;
-        }
-        img = $('img[usemap=#' + mapName + ']')[0];
-        return !!img && visible(img);
-      }
-      return (/input|select|textarea|button|object/.test(nodeName) ?
-      !element.disabled :
-      'a' === nodeName ?
-      element.href || isTabIndexNotNaN :
-      isTabIndexNotNaN) &&
-      // the element and all of its ancestors must be visible
-      visible(element);
-    }
-
-    $.extend($.expr[':'], {
-      focusable: function(element) {
-        return focusable(element, !isNaN($.attr(element, 'tabindex')));
-      }
-    });
+    </script>
 
 
-
-  });
-  </script>
-  </div>
-
-
-
-
-
-    <footer>
-        <div class="margins-container">
-          <img src="https://actionnetwork.org/user_files/user_files/000/079/813/original/ITF_LOGO_WHITE_2021.svg" alt="">
-                  <span class="strap">The ITF fights passionately to improve the working lives of transport workers. We are the voice for nearly 20 million working people across nearly 700 member unions in 150 countries around the world.</span>
-                  <div class="links">
-                                              <a target="_blank" href="https://www.facebook.com/ITFglobal">Facebook</a>
-                                              <a target="_blank" href="https://twitter.com/itfglobalunion"> Twitter</a>
-                                              <a target="_blank" href="https://www.instagram.com/itfglobal/?hl=en"> Instagram</a>
-                                      </div>
-                  <span class="strap">© 2022 International Transport Workers’ Federation. All rights reserved</span>
-
-        </div>
-    </footer>
-
-  <a class="button" href="#can_sidebar" id="sticky-button">Skip to action &darr;</a>
-  <div id="modal">
-    <div class="card">
-        <h2>Are you sure you don't want to subscribe?</h2>
-        <p>Are you sure you don't want to subscribe? We build powerful campaigns that improve the lives of millions of transport workers. But we can only make this change happen with help from thousands of people just like you. Will you subscribe to help win for working people?</p>
-        <button class="subscribe">Okay, I'll subscribe</button>
-        <div class="bottom-group">
-          <p class="close-text">If you don't want to hear more about this campaign or our work via email close this prompt:</p>
-          <button class="close-button" aria-label="close modal">Close</button>
-        </div>
     </div>
 
-  </div>
 
 
 
-  </body>
-  </html>
+      <footer>
+          <div class="margins-container">
+            <img src="https://actionnetwork.org/user_files/user_files/000/079/813/original/ITF_LOGO_WHITE_2021.svg" alt="">
+                    <span class="strap">The ITF fights passionately to improve the working lives of transport workers. We are the voice for nearly 20 million working people across nearly 700 member unions in 150 countries around the world.</span>
+                    <div class="links">
+                                                <a target="_blank" href="https://www.facebook.com/ITFglobal">Facebook</a>
+                                                <a target="_blank" href="https://twitter.com/itfglobalunion"> Twitter</a>
+                                                <a target="_blank" href="https://www.instagram.com/itfglobal/?hl=en"> Instagram</a>
+                                        </div>
+                    <span class="strap">© 2022 International Transport Workers’ Federation. All rights reserved</span>
+
+          </div>
+      </footer>
+
+    <a class="button" href="#can_sidebar" id="sticky-button">Skip to action &darr;</a>
+    <div id="modal">
+      <div class="card">
+          <h2>Are you sure you don't want to subscribe?</h2>
+          <p>Are you sure you don't want to subscribe? We build powerful campaigns that improve the lives of millions of transport workers. But we can only make this change happen with help from thousands of people just like you. Will you subscribe to help win for working people?</p>
+          <button class="subscribe">Okay, I'll subscribe</button>
+          <div class="bottom-group">
+            <p class="close-text">If you don't want to hear more about this campaign or our work via email close this prompt:</p>
+            <button class="close-button" aria-label="close modal">Close</button>
+          </div>
+      </div>
+
+    </div>
+
+
+
+    </body>
+    </html>
