@@ -14,40 +14,34 @@
         - Always store any files you need to reference like fonts and logos on Action Network file system.
     */
 :root {
-	--cta-color: #00353c;
-	--cta-font-color: yellow;
-	--title-color: orange;
+	--cta-color: #;
+	--cta-font-color: #;
+	--title-color: #;
 	--title-size: 1.6rem;
-	--link-color: #0071ff;
-	--body-color: #f7f8f8;
+	--link-color: #;
+	--body-color: #;
 	--body-max-width: 1600px;
-	--body-text-color: #000000;
-	--sidebar-color: #d1d4d4;
-	--action-background-color: #ccff00;
+	--body-text-color: #;
+	--sidebar-color: #;
+	--action-background-color: #;
 	--action-meter-color: violet;
-	--footer-color: #00353c;
-	--footer-text-color: #f7f8f8;
+	--footer-color: #;
+	--footer-text-color: #;
 	--logo-width: 350px;
-	--regular-font: Neue_Haas_Unica_;
-	--regular-font-url: URL://HERE;
-	--bold-font: Neue_Haas_Unica_Bold;
-	--bold-font-url: URL://HERE;
-	--logo-url: URL://HERE;
+	--regular-font: sans-serif;
+	--regular-font-url: URL-HERE;
+	--bold-font: sans-serif;
+	--bold-font-url: URL-HERE;
+	--logo-url: URL-HERE;
 	--footer-logo-width: 200px;
 	--gutter-padding: 48px;
 	--grid-spacing: 40px;
 }
 
+    /*Add all the type faces you need - duplicate this code if needed*/
 @font-face {
-	font-family: Neue_Haas_Unica_Bold;
-		src: url('URL://HERE') format("woff");
-		font-weight: normal;
-		font-style: normal;
-}
-
-@font-face {
-	font-family: Neue_Haas_Unica_;
-		src: url('URL://HERE') format("woff");
+	font-family: sans-serif;
+		src: url('URL-HERE') format("woff");
 		font-weight: normal;
 		font-style: normal;
 }
@@ -246,6 +240,11 @@ div#donation_recipient_wrap h5 {
 	font-family: var(--bold-font);
 }
 
+#sa-custom-split .custom-sa-header {
+        float: left; 
+        width: 65%;
+}
+    
 #sa-custom-split .custom-sa-header .logo-container {
 	display: block;
 	text-align: center;
@@ -254,6 +253,7 @@ div#donation_recipient_wrap h5 {
 #sa-custom-split .custom-sa-header .logo-container img {
 	max-width: var(--logo-width);
 	display: block;
+    margin: auto;
 }
 
 .logo-container {
@@ -786,22 +786,30 @@ input[name="donation[custom_amount]"] {
 .can_embed.v5.letter #can_letter_one_col #can_main_col {
      width: 65% !important;
 }
-
+#sa-custom-body table tr:nth-child(odd) {
+    background: #eeeeee;
+}
+    
+#sa-custom-body table tr td {
+    padding: 0.5em;
+    vertical-align: top;
+}
 
 </style>
 
 </head>
 <body class="gen_body" id="sa-custom-split">
-<header class="custom-sa-header">
-<div class="logo-container">
 
-    <!-- 
-        UPDATE THIS 
-        ADD IN THE URL OF THE LOGO / IMAGE YOU HAVE UPLOADED TO ACTION NETWORK FILE SYSTEM HERE 
-    -->
-<img src="" alt="">
-    <!--        END UPDATE SECTION         -->
-</div>
-</header>
 
 <div id="sa-custom-body">
+    <header class="custom-sa-header">
+        <div class="logo-container">
+
+            <!-- 
+                UPDATE THIS 
+                ADD IN THE URL OF THE LOGO / IMAGE YOU HAVE UPLOADED TO ACTION NETWORK FILE SYSTEM HERE 
+            -->
+        <img src="" alt="">
+            <!--        END UPDATE SECTION         -->
+        </div>
+    </header>
