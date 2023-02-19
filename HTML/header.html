@@ -13,6 +13,9 @@
         - SOON: See the reference image to understand where on the tempalte they correspond to.
         - Always store any files you need to reference like fonts and logos on Action Network file system.
     */
+
+	/* PLACEHOLDERS
+
 :root {
 	--cta-color: #;
 	--cta-font-color: #;
@@ -27,24 +30,81 @@
 	--action-meter-color: violet;
 	--footer-color: #;
 	--footer-text-color: #;
+	--error-font-color: #;
+	--error-bg-color: #;
+	--light-bg: #;
 	--logo-width: 350px;
-	--regular-font: sans-serif;
-	--regular-font-url: URL-HERE;
-	--bold-font: sans-serif;
-	--bold-font-url: URL-HERE;
-	--logo-url: URL-HERE;
+	--regular-font: Custom_Font_Regular;
+	--bold-font: Custom_Font_Bold;
+	--logo-url: REPLACE-URL-IN-SRC-OF-LOGO-IMG-ELEMENT;
 	--footer-logo-width: 200px;
 	--gutter-padding: 48px;
 	--grid-spacing: 40px;
 }
 
-    /*Add all the type faces you need - duplicate this code if needed*/
 @font-face {
-	font-family: sans-serif;
+	font-family: Custom_Font_Regular;
 		src: url('URL-HERE') format("woff");
 		font-weight: normal;
 		font-style: normal;
 }
+
+@font-face {
+	font-family: Custom_Font_Bold;
+		src: url('URL-HERE') format("woff");
+		font-weight: normal;
+		font-style: normal;
+}
+
+*/
+
+/* TESTING: DEFINED VALUES */
+
+:root {
+	--cta-color: red;
+	--cta-font-color: yellow;
+	--title-color: green;
+	--title-size: 1.6rem;
+	--link-color: purple;
+	--body-color: wheat;
+	--body-max-width: 1200px;
+	--body-text-color: navy;
+	--sidebar-color: aqua;
+	--action-background-color: coral;
+	--action-meter-color: deepskyblue;
+	--footer-color: lightsteelblue;
+	--footer-text-color: blue;
+	--error-font-color: orange;
+	--error-bg-color: darkred;
+	--light-bg: white;
+	--logo-width: 350px;
+    /* Define the url source of the fonts in the next section (type faces)*/
+	--regular-font: Custom_Font_Regular;
+	--bold-font: Custom_Font_Bold;
+    /* Replace this value in the logo src section*/
+	--logo-url: REPLACE-URL-IN-SRC-OF-LOGO-IMG-ELEMENT;
+	--footer-logo-width: 200px;
+	--gutter-padding: 48px;
+	--grid-spacing: 40px;
+}
+
+/*Add all the type faces you need - duplicate this code if needed*/
+
+@font-face {
+	font-family: Custom_Font_Bold;
+	src: url('https://actionnetwork.org/user_files/user_files/000/047/745/original/national-2-web-extrabold.woff') format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Custom_Font_Regular;
+	src: url('https://actionnetwork.org/user_files/user_files/000/047/751/original/national-2-web-regular.woff') format("woff");
+    src: var(--regular-font-url);
+	font-weight: normal;
+	font-style: normal;
+}
+
 
     /*      END UPDATE SECTION       */    
     
@@ -112,6 +172,10 @@ body,
 	}
 }
 
+#can_embed_form > div {
+    padding: calc( var(--gutter-padding)/2);
+}
+
 .can_embed-html #can_fundraising_widget #can_embed_form:not(.full) #action_info .action_info_user:last-child a,
 	.can_embed-html #js-ticketed_event_widget #can_embed_form:not(.full) #action_info .action_info_user:last-child a {
 	display: inline-block;
@@ -122,13 +186,13 @@ body,
 
 .can_embed-html #can_fundraising_widget #can_embed_form label.donate_amount.js-donate_amount,
 	.can_embed-html #js-ticketed_event_widget #can_embed_form label.donate_amount.js-donate_amount {
-	background: white;
+	background: var(--light-bg);
 	border: none;
 }
 
 .can_embed-html #can_fundraising_widget #can_embed_form .donate_recurring.js-donate_recurring.mb40.clearfix,
 	.can_embed-html #js-ticketed_event_widget #can_embed_form .donate_recurring.js-donate_recurring.mb40.clearfix {
-	background: white;
+	background: var(--light-bg);
 	border: none;
 }
 
@@ -192,7 +256,7 @@ div#donation_recipient_wrap h5 {
 
 .can_embed-html #can_fundraising_widget #can_embed_form div#donate_login,
 	.can_embed-html #js-ticketed_event_widget #can_embed_form div#donate_login {
-	background: white;
+	background: var(--light-bg);
 }
 
 .can_embed-html #can_fundraising_widget #can_embed_form .action_sidebar img,
@@ -202,7 +266,7 @@ div#donation_recipient_wrap h5 {
 
 .can_embed-html #can_fundraising_widget #can_embed_form .action_sidebar .action_description,
 	.can_embed-html #js-ticketed_event_widget #can_embed_form .action_sidebar .action_description {
-	background: white;
+	background: var(--light-bg);
 	padding: 30px;
 }
 
@@ -238,11 +302,12 @@ div#donation_recipient_wrap h5 {
 	#sa-custom-split h2,
 	#sa-custom-split h3 {
 	font-family: var(--bold-font);
+	color: var(--title-color);
 }
 
 #sa-custom-split .custom-sa-header {
-        float: left; 
-        width: 65%;
+    float: left; 
+    width: 65%;
 }
     
 #sa-custom-split .custom-sa-header .logo-container {
@@ -290,6 +355,7 @@ div#donation_recipient_wrap h5 {
 	#can_main_col .action_description h5 {
 	font-family: var(--bold-font);
 	font-weight: bold;
+	color: var(--title-color);
 }
 
 #can_main_col .entry-title {
@@ -327,12 +393,12 @@ div#donation_recipient_wrap h5 {
 }
 
 #can_main_col p a {
-	color: var(--link-color);
+	color: var(--link-color) !important;
 }
 
 #can_main_col #action_info #action_info_inner {
 	border: 1px solid var(--cta-color);
-	background: white;
+	background: var(--light-bg);
 }
 
 #can_main_col #action_info #action_info_inner a {
@@ -343,7 +409,7 @@ div#donation_recipient_wrap h5 {
 }
 
 #can_main_col .action_letter {
-	background: white;
+	background: var(--light-bg);
 	padding: 50px;
 	border: 1px solid var(--cta-color);
 }
@@ -358,7 +424,6 @@ div#donation_recipient_wrap h5 {
 	background: var(--sidebar-color) !important;
 	border: none !important;
 	padding: 0;
-	float: none !important;
 	z-index: 100 !important;
 	overflow-y: auto !important;
 	-webkit-overflow-scrolling: touch;
@@ -421,7 +486,7 @@ div#donation_recipient_wrap h5 {
 }
 
 #can_sidebar .action_status_tracker .action_status_status_bar {
-	background: white !important;
+	background: var(--light-bg) !important;
 	border-radius: 10px !important;
 }
 
@@ -495,9 +560,15 @@ div#donation_recipient_wrap h5 {
 }
 
 #can_sidebar .action_sidebar input[type="submit"],
-#can_embed_form label.donate_amount:hover, #can_embed_form label.donate_amount-selected {
+#can_embed_form label.donate_amount:hover, #can_embed_form label.donate_amount-selected,
+.can_button, #donate_auto_modal input[type=submit], #donate_auto_modal .button, #donate_make_recurring_modal input[type=submit],
+ #donate_make_recurring_modal .button, #can_embed_form input[type=submit], #can_embed_form .button {
 	background-color: var(--cta-color) !important;
 	color: var(--cta-font-color) !important;
+}
+
+#can_thank_you {
+    clear: both !important;
 }
 
 .can_thank_you_wrap > .clearfix {
@@ -582,6 +653,11 @@ div#donation_recipient_wrap h5 {
 	width: 100%;
 }
 
+.can_embed.v5.event_campaign.event_campaign_full .clearfix h2 {
+    clear: both;
+}
+
+
 #modal {
 	position: fixed;
 	left: 0;
@@ -617,7 +693,7 @@ div#donation_recipient_wrap h5 {
 	max-width: 500px;
 	min-height: 400px;
 	padding: var(--gutter-padding);
-	background: white;
+	background: var(--light-bg);
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.06);
 }
 
@@ -651,8 +727,8 @@ div#donation_recipient_wrap h5 {
 
 #modal .card .close-button {
 	display: inline-block;
-	background: white;
-	color: var(--cta-color);
+	background: var(--light-bg) !important;
+	color: var(--cta-color) !important;
 	border: 1px solid var(--cta-color);
 	width: auto;
 	padding: 10px 20px;
@@ -661,8 +737,8 @@ div#donation_recipient_wrap h5 {
 }
 
 #modal .card button {
-	background: var(--cta-color);
-	color: var(--cta-font-color);
+	background: var(--cta-color) !important;
+	color: var(--cta-font-color) !important;
 	padding: 16px 20px;
 	text-align: center;
 	display: block;
@@ -671,10 +747,10 @@ div#donation_recipient_wrap h5 {
 	width: 100%;
 	text-shadow: none;
 	margin-top: 32px;
-	color: white;
 	font-family: var(--regular-font);
 	font-size: 1.125rem;
 }
+
 
 #modal .close-button {
 	filter: brightness(100);
@@ -701,6 +777,12 @@ div#donation_recipient_wrap h5 {
 @media (max-width: 991px) {
 	#sticky-button {
 		display: block;
+	}
+}
+
+@media (min-width: 992px) {
+	#sticky-button {
+		display: none !important;
 	}
 }
 
@@ -753,14 +835,21 @@ footer .margins-container a {
 	color: var(--footer-text-color);
 	font-family: var(--bold-font);
 	font-weight: bold;
-	text-decoration: underline;
 	display: inline-block;
 	margin-left: 6px;
 }
 
-a {
-	color: var(--link-color);
+a:not(.button) {
+	color: var(--link-color) !important;
 	text-decoration: none;
+}
+
+a:not(.button):hover {
+	text-decoration: underline !important;
+}
+
+a.share_button {
+	color: white !important;
 }
 
 /* This action is not currently available. */
@@ -795,6 +884,20 @@ input[name="donation[custom_amount]"] {
     vertical-align: top;
 }
 
+/* errors */
+.js-error_message,
+#error_message,
+#error_message strong {
+        background-color: var(--error-bg-color) !important;
+        color: var(--error-font-color) !important;
+}
+label.error_checkbox {
+        color: var(--error-bg-color) !important;
+}
+input.error_input {
+    box-shadow: 0 0 0 2px var(--error-bg-color) inset, 0 0 4px 0 var(--error-bg-color) inset !important;
+}
+
 </style>
 
 </head>
@@ -809,7 +912,12 @@ input[name="donation[custom_amount]"] {
                 UPDATE THIS 
                 ADD IN THE URL OF THE LOGO / IMAGE YOU HAVE UPLOADED TO ACTION NETWORK FILE SYSTEM HERE 
             -->
-        <img src="" alt="">
+
+            <!-- 
+			<img src="" alt="">
+            -->
+        <img src='https://actionnetwork.org/user_files/user_files/000/079/812/original/GLIDER_ITF_WEB_ASSETS_01_Logo_Full_Black.svg' alt="">
+       
             <!--        END UPDATE SECTION         -->
         </div>
     </header>
