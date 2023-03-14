@@ -58,7 +58,7 @@
 
 
 /* TESTING: DEFINED VALUES */
-/* 
+
 :root {
 	--cta-color: red;
 	--cta-font-color: yellow;
@@ -84,10 +84,10 @@
 	--gutter-padding: 48px;
 	--grid-spacing: 40px;
 }
-  */
+
 /*Add all the type faces you need - duplicate this code if needed*/
 
-/* @font-face {
+@font-face {
 	font-family: Custom_Font_Bold;
 	src: url('https://actionnetwork.org/user_files/user_files/000/047/745/original/national-2-web-extrabold.woff') format("woff");
 	font-weight: normal;
@@ -100,7 +100,7 @@
     src: var(--regular-font-url);
 	font-weight: normal;
 	font-style: normal;
-} */
+}
 
 
     /*      END UPDATE SECTION       */    
@@ -142,6 +142,8 @@ body,
 		float: none !important;
 		padding: 0 !important;
 	}
+
+
 }
 
 .can_embed-html #can_fundraising_widget #can_main_col,
@@ -160,8 +162,6 @@ body,
 }
 
 @media (max-width: 991px) {
-
-	.can_embed-html #can_fundraising_widget #can_embed_form>.clearfix,
 		.can_embed-html #js-ticketed_event_widget #can_embed_form>.clearfix {
 		display: flex;
 		flex-wrap: wrap;
@@ -781,6 +781,15 @@ div#donation_recipient_wrap h5 {
 	#sticky-button {
 		display: none !important;
 	}
+	.discussion-board {
+		display: grid;
+		float: right
+	}
+
+	.can_embed.v4.letter #can_letter_one_col #can_main_col,
+	.can_embed.v5.letter #can_letter_one_col #can_main_col {
+		width: 65% !important;
+	}
 }
 
 footer {
@@ -868,10 +877,6 @@ input[name="donation[custom_amount]"] {
     margin: auto;
 }
 
-.can_embed.v4.letter #can_letter_one_col #can_main_col,
-.can_embed.v5.letter #can_letter_one_col #can_main_col {
-     width: 65% !important;
-}
 #sa-custom-body table tr:nth-child(odd) {
     background: #eeeeee;
 }
@@ -879,6 +884,20 @@ input[name="donation[custom_amount]"] {
 #sa-custom-body table tr td {
     padding: 0.5em;
     vertical-align: top;
+}
+
+.thank-you-message {
+  display: table;
+}
+
+
+#sa-custom-split #sa-custom-body .can_thank_you_wrap>div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+}
+
+div#referral_code_select_wrap {
+    order: 1;
 }
 
 /* errors */
