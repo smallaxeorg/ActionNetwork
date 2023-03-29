@@ -34,9 +34,11 @@
     });
 
     function initStickyBtn(enabled) {
-      var submit = $("input[type=submit]");
-      var stickyBtn = $("#sticky-button");
-      var form = $("form");
+      submit = $("input[type=submit]");
+      stickyBtn = $("#sticky-button");
+      form = $("form");
+      iframe = $("#can_embed_iframe");
+      iframeTop = $(iframe).offset()?.top || 0;
 
       if (!enabled) {
         stickyBtn.remove();
@@ -44,28 +46,38 @@
         return;
       }
 
-      if (!form.length && $("#can_embed_iframe")) {
-        form = $("#can_embed_iframe").contents().find("form");
-        submit = $("#can_embed_iframe").contents().find("input[type=submit]");
+      if (!form.length && iframe) {
+        form = $(iframe).contents().find("form");
+        submit = $(iframe).contents().find("input[type=submit]");
       }
 
       if (!stickyBtn || !submit.length) return;
       if (submit.isInViewport()) {
-        stickyBtn.fadeOut();
+        stickyBtn.hide();
       } else {
-        stickyBtn.fadeIn();
+        stickyBtn.show();
       }
 
       $("#sticky-button").click(function (e) {
         e.preventDefault();
-
         window.scrollTo({
-          top: $(form).offset().top + 50,
+          top: $(submit).offset().top  + iframeTop - $(window).height() + $(submit).outerHeight() +10,
           behavior: "smooth",
         });
       });
 
       window.addEventListener("scroll", () => {
+
+          submit = $("input[type=submit]");
+          stickyBtn = $("#sticky-button");
+          form = $("form");
+          iframe = $("#can_embed_iframe");
+
+          if (!form.length && iframe) {
+            form = $(iframe).contents().find("form");
+            submit = $(iframe).contents().find("input[type=submit]");
+          }
+
         if (!stickyBtn || !submit.length) return;
         if (submit.isInViewport()) {
           stickyBtn.fadeOut();
@@ -73,6 +85,20 @@
           stickyBtn.fadeIn();
         }
       });
+
+        var tyForm = $("#can_embed_iframe")
+              .contents()
+              .find('.can_embed');
+
+        $(tyForm).on("DOMNodeInserted", function (el) {
+            if ( $(el.target).hasClass('can_thank_you_wrap') ) {
+              //TY page
+              setTimeout(function () {
+                $("#sticky-button").remove();
+              }, 500);
+            } 
+        });
+
     }
 
     $.fn.isInViewport = function () {
@@ -80,7 +106,7 @@
       const elementBottom = elementTop + $(this).outerHeight();
       const viewportTop = $(window).scrollTop();
       const viewportBottom = viewportTop + $(window).height();
-      return elementBottom > viewportTop && elementBottom < viewportBottom;
+      return elementBottom + iframeTop < viewportBottom;
     };
 
     function initOptOutModal() {
