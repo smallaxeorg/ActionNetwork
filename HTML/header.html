@@ -16,49 +16,6 @@
 
     /* PLACEHOLDERS */
 
-/* :root {
-	--cta-color: #;
-	--cta-font-color: #;
-	--title-color: #;
-	--title-size: 1.6rem;
-	--link-color: #;
-	--body-color: #;
-	--body-max-width: 1600px;
-	--body-text-color: #;
-	--sidebar-color: #;
-	--action-background-color: #;
-	--action-meter-color: violet;
-	--footer-color: #;
-	--footer-text-color: #;
-	--error-font-color: #;
-	--error-bg-color: #;
-	--light-bg: #;
-	--logo-width: 350px;
-	--regular-font: Custom_Font_Regular;
-	--bold-font: Custom_Font_Bold;
-	--logo-url: REPLACE-URL-IN-SRC-OF-LOGO-IMG-ELEMENT;
-	--footer-logo-width: 200px;
-	--gutter-padding: 48px;
-	--grid-spacing: 40px;
-}
-
-@font-face {
-	font-family: Custom_Font_Regular;
-		src: url('URL-HERE') format("woff");
-		font-weight: normal;
-		font-style: normal;
-}
-
-@font-face {
-	font-family: Custom_Font_Bold;
-		src: url('URL-HERE') format("woff");
-		font-weight: normal;
-		font-style: normal;
-} */
-
-
-/* TESTING: DEFINED VALUES */
-
 :root {
 	--cta-color: red;
 	--cta-font-color: yellow;
@@ -71,6 +28,8 @@
 	--sidebar-color: aqua;
 	--action-background-color: coral;
 	--action-meter-color: deepskyblue;
+    --action-text-color: black;
+    --modal-title-color: red;
 	--footer-color: lightsteelblue;
 	--footer-text-color: blue;
 	--footer-link-color: pink;
@@ -233,6 +192,7 @@ div#donation_recipient_wrap h5 {
 	.can_embed-html #js-ticketed_event_widget #can_embed_form .can_embed-html #can_fundraising_widget #d_sharing label,
 	.can_embed-html #js-ticketed_event_widget #can_embed_form #d_sharing.affirmative_optin_d_sharing label.radio {
 	font-size: 1.2rem;
+    color: var(--action-text-color);
 }
 
 .can_embed-html #can_fundraising_widget #can_embed_form span.controls.check_radio_field,
@@ -465,7 +425,7 @@ div#donation_recipient_wrap h5 {
 	text-transform: none;
 	margin-bottom: 8px;
 	font-size: 1rem;
-	color: var(--body-text-color);
+	color: var(--action-text-color);
 }
 
 #sa-custom-split #sa-custom-body #can_sidebar .floatlabel-label::after,
@@ -696,7 +656,7 @@ div#donation_recipient_wrap h5 {
 }
 
 #modal .card h2 {
-	color: var(--cta-color);
+	color: var(--modal-title-color);
 	font-size: 1.8rem;
 	text-align: center;
 	margin-top: 0;
@@ -803,7 +763,7 @@ footer {
 	overflow: hidden;
 }
     
-footer .margins-container a {
+footer .margins-container a:not(.button) {
     color: var(--footer-link-color)
 }
 
