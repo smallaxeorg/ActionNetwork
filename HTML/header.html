@@ -185,8 +185,8 @@ div#donation_recipient_wrap h5 {
 	align-items: center;
 }
 
-.can_embed-html #can_fundraising_widget #can_embed_form #d_sharing label.control-label.check_radio_label,
-	.can_embed-html #can_fundraising_widget #can_embed_form .can_embed-html #can_fundraising_widget #d_sharing label,
+.can_embed-html #can_fundraising_widget #can_embed_form #d_sharing label.control-label.check_radio_label,html #can_embed_form .check_radio_field label,
+	.can_embed-html #can_fundraising_widget #can_embed_form,
 	.can_embed-html #can_fundraising_widget #can_embed_form #d_sharing.affirmative_optin_d_sharing label.radio,
 	.can_embed-html #js-ticketed_event_widget #can_embed_form #d_sharing label.control-label.check_radio_label,
 	.can_embed-html #js-ticketed_event_widget #can_embed_form .can_embed-html #can_fundraising_widget #d_sharing label,
@@ -194,6 +194,11 @@ div#donation_recipient_wrap h5 {
 	font-size: 1.2rem;
     color: var(--action-text-color);
 }
+    
+html #can_embed_form #d_sharing.affirmative_optin_d_sharing .affirmative_note {
+     color: var(--action-text-color);
+}
+
 
 .can_embed-html #can_fundraising_widget #can_embed_form span.controls.check_radio_field,
 	.can_embed-html #js-ticketed_event_widget #can_embed_form span.controls.check_radio_field {
@@ -811,7 +816,7 @@ footer .margins-container a {
 }
 
 a:not(.button) {
-	color: var(--link-color) !important;
+	color: var(--link-color);
 	text-decoration: none;
 }
 
