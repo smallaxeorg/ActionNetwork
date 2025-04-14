@@ -1,3 +1,11 @@
+/* 
+  Help Text:
+  This file contains CSS styles for embedding Action Network forms and 
+  customizing their appearance. Make sure to adjust brand-specific colors,
+  fonts, and dimensions as needed. CSS assumes that Action Network embedded forms are nested inside a .action-network-form-section div.
+
+  When selecting the embed in Action Network to generate the embed code, choose layout styles only. 
+*/
 
 /*Fonts*/
 /* Base styles */
