@@ -1,1 +1,101 @@
 
+/*Fonts*/
+/* Base styles */
+html.can_embed-html body#can_fundraising_widget, .action-network-form-section {
+  color: #FFFDF8;
+  margin: 0;
+  font-family: 'Bstritma', sans-serif; }
+  html.can_embed-html body#can_fundraising_widget #can_embed_form h2, html.can_embed-html body#can_fundraising_widget #can_embed_form h4, html.can_embed-html body#can_fundraising_widget #can_embed_form h2.line, html.can_embed-html body#can_fundraising_widget #can_embed_form #donation_recipient_wrap, html.can_embed-html body#can_fundraising_widget #can_embed_form #action_info, .action-network-form-section #can_embed_form h2, .action-network-form-section #can_embed_form h4, .action-network-form-section #can_embed_form h2.line, .action-network-form-section #can_embed_form #donation_recipient_wrap, .action-network-form-section #can_embed_form #action_info , .action-network-form-section #can_embed_form #can_embed_form_inner > h2 {
+    text-align: center;
+    border-bottom: 0px;
+    font-size: 38px;
+     margin-bottom: 16px !important;
+    padding-bottom: 0;
+} 
+  .action-network-form-section #can_embed_form #can_embed_form_inner > h4 {
+    font-size: 16px;
+    text-transform: initial;
+    letter-spacing: normal;
+}
+  .action-network-form-section #action_info {display: none;}
+
+.action-network-form-section #can_embed_form #can_embed_form_inner > h4:after {
+    background-color: transparent;
+}
+  html.can_embed-html body#can_fundraising_widget #can_embed_form.can_float #form_col1, html.can_embed-html body#can_fundraising_widget #can_embed_form.can_float #form_col2, .action-network-form-section #can_embed_form.can_float #form_col1, .action-network-form-section #can_embed_form.can_float #form_col2 {
+    float: none;
+    width: 100%;
+    clear: both; }
+  html.can_embed-html body#can_fundraising_widget #can_embed_form .check_radio_field.donate_amount_wrap label, .action-network-form-section #can_embed_form .check_radio_field.donate_amount_wrap label {
+    width: 30%;
+    font-size: 1.5em;
+    height: auto;
+    margin: 0 2.5% 20px 0;
+    padding: 0.25em 0.5em;
+    border: 1px #09b3dc solid;
+    /*Mobile*/ }
+    html.can_embed-html body#can_fundraising_widget #can_embed_form .check_radio_field.donate_amount_wrap label:hover, html.can_embed-html body#can_fundraising_widget #can_embed_form .check_radio_field.donate_amount_wrap label.donate_amount-selected, .action-network-form-section #can_embed_form .check_radio_field.donate_amount_wrap label:hover, .action-network-form-section #can_embed_form .check_radio_field.donate_amount_wrap label.donate_amount-selected {
+      background: #09b3dc;
+      color: #000114;
+      border-color: #000114;
+  border-radius: 5px}
+    @media (max-width: 1200px) {
+      html.can_embed-html body#can_fundraising_widget #can_embed_form .check_radio_field.donate_amount_wrap label, .action-network-form-section #can_embed_form .check_radio_field.donate_amount_wrap label {
+        width: 100%;
+        margin-right: 0; } }
+  html.can_embed-html body#can_fundraising_widget #can_embed_form .donate_recurring, .action-network-form-section #can_embed_form .donate_recurring {
+    background: transparent; }
+  html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_login, html.can_embed-html body#can_fundraising_widget #can_embed_form #donation_welcome, .action-network-form-section #can_embed_form #donate_login, .action-network-form-section #can_embed_form #donation_welcome {
+    background: #000114;
+    color: #36094D;
+    font-size: 0.9em;
+    margin-top: auto; }
+    html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_login a, html.can_embed-html body#can_fundraising_widget #can_embed_form #donation_welcome a, .action-network-form-section #can_embed_form #donate_login a, .action-network-form-section #can_embed_form #donation_welcome a {
+      color: #f6f930; }
+  html.can_embed-html body#can_fundraising_widget #can_embed_form .floatlabel-wrapper .floatlabel-label, .action-network-form-section #can_embed_form .floatlabel-wrapper .floatlabel-label {
+    color: #02042f;
+    height:16px;
+  }
+  #can_embed_form #action_welcome_message #action_welcome_message_inner {
+        background-color: #36094D !important;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #6D326D;
+  border-radius:20px;
+  }
+
+ 
+  html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=text], html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=password], html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=url], html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=email], html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=tel], html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=number], html.can_embed-html body#can_fundraising_widget #can_embed_form span.can_select, .action-network-form-section #can_embed_form input[type=text], .action-network-form-section #can_embed_form input[type=password], .action-network-form-section #can_embed_form input[type=url], .action-network-form-section #can_embed_form input[type=email], .action-network-form-section #can_embed_form input[type=tel], .action-network-form-section #can_embed_form input[type=number], .action-network-form-section #can_embed_form span.can_select, .action-network-form-section #can_embed_form .iti input[type=text] {
+    color: #02042f;
+    border-color: #000114; 
+border-radius: 20px;
+  margin-bottom:15px;}
+    html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=text]::placeholder, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=password]::placeholder, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=url]::placeholder, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=email]::placeholder, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=tel]::placeholder, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=number]::placeholder, html.can_embed-html body#can_fundraising_widget #can_embed_form span.can_select::placeholder, .action-network-form-section #can_embed_form input[type=text]::placeholder, .action-network-form-section #can_embed_form input[type=password]::placeholder, .action-network-form-section #can_embed_form input[type=url]::placeholder, .action-network-form-section #can_embed_form input[type=email]::placeholder, .action-network-form-section #can_embed_form input[type=tel]::placeholder, .action-network-form-section #can_embed_form input[type=number]::placeholder, .action-network-form-section #can_embed_form span.can_select::placeholder {
+      color: #02042f; }
+    html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=text]:focus, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=password]:focus, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=url]:focus, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=email]:focus, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=tel]:focus, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=number]:focus, html.can_embed-html body#can_fundraising_widget #can_embed_form span.can_select:focus, .action-network-form-section #can_embed_form input[type=text]:focus, .action-network-form-section #can_embed_form input[type=password]:focus, .action-network-form-section #can_embed_form input[type=url]:focus, .action-network-form-section #can_embed_form input[type=email]:focus, .action-network-form-section #can_embed_form input[type=tel]:focus, .action-network-form-section #can_embed_form input[type=number]:focus, .action-network-form-section #can_embed_form span.can_select:focus {
+      border-color: #09b3dc; }
+  html.can_embed-html body#can_fundraising_widget #can_embed_form .donate_cc_exp, .action-network-form-section #can_embed_form .donate_cc_exp {
+    width: 48.75%; }
+    html.can_embed-html body#can_fundraising_widget #can_embed_form .donate_cc_exp.donate_cc_month, .action-network-form-section #can_embed_form .donate_cc_exp.donate_cc_month {
+      margin-right: 2.5%; }
+  html.can_embed-html body#can_fundraising_widget #can_embed_form .can_button, html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_auto_modal input[type=submit], html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_auto_modal .button, html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_make_recurring_modal input[type=submit], html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_make_recurring_modal .button, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=submit], html.can_embed-html body#can_fundraising_widget #can_embed_form .button, .action-network-form-section #can_embed_form .can_button, .action-network-form-section #can_embed_form #donate_auto_modal input[type=submit], .action-network-form-section #can_embed_form #donate_auto_modal .button, .action-network-form-section #can_embed_form #donate_make_recurring_modal input[type=submit], .action-network-form-section #can_embed_form #donate_make_recurring_modal .button, .action-network-form-section #can_embed_form input[type=submit], .action-network-form-section #can_embed_form .button {
+    border: 3px #61C9A8 solid;
+    border-radius:40px;
+    font-size: 1.5em;
+    background: #61C9A8;
+    color: #0E1021;
+    font-weight: bold;
+    padding: 0.3em;
+    -webkit-appearance: none; }
+    html.can_embed-html body#can_fundraising_widget #can_embed_form .can_button:hover, html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_auto_modal input[type=submit]:hover, html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_auto_modal .button:hover, html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_make_recurring_modal input[type=submit]:hover, html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_make_recurring_modal .button:hover, html.can_embed-html body#can_fundraising_widget #can_embed_form input[type=submit]:hover, html.can_embed-html body#can_fundraising_widget #can_embed_form .button:hover, .action-network-form-section #can_embed_form .can_button:hover, .action-network-form-section #can_embed_form #donate_auto_modal input[type=submit]:hover, .action-network-form-section #can_embed_form #donate_auto_modal .button:hover, .action-network-form-section #can_embed_form #donate_make_recurring_modal input[type=submit]:hover, .action-network-form-section #can_embed_form #donate_make_recurring_modal .button:hover, .action-network-form-section #can_embed_form input[type=submit]:hover, .action-network-form-section #can_embed_form .button:hover {
+      background: #B8E9D7;
+      color: #0E1021;
+      border-color: #B8E9D7; }
+  html.can_embed-html body#can_fundraising_widget #can_embed_form #d_sharing, html.can_embed-html body#can_fundraising_widget #can_embed_form #donate_disclaimer, .action-network-form-section #can_embed_form #d_sharing, .action-network-form-section #can_embed_form #donate_disclaimer {
+    border: none; }
+  html.can_embed-html body#can_fundraising_widget #can_embed_form #can_thank_you, .action-network-form-section #can_embed_form #can_thank_you {
+    background: #000114; }
+    html.can_embed-html body#can_fundraising_widget #can_embed_form #can_thank_you h3.entry-title, .action-network-form-section #can_embed_form #can_thank_you h3.entry-title {
+      border-color: #f6f930; }
+    html.can_embed-html body#can_fundraising_widget #can_embed_form #can_thank_you h4::after, .action-network-form-section #can_embed_form #can_thank_you h4::after {
+      display: none; }
